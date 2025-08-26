@@ -11,8 +11,12 @@ client = Groq()
 
 with open('metadata.json', 'r', encoding='utf-8') as f:
         metadata = json.load(f)
-clean_pages = split_text('100M Lost Chapters by Alex Hormozi.txt')
-collection = initialize_chroma(clean_pages, metadata)  # Initialize ChromaDB collection
+try:
+    book = '100M Lost Chapters by Alex Hormozi.txt'
+    clean_pages = split_text(book)
+    collection = initialize_chroma(clean_pages, metadata)  # Initialize ChromaDB collection
+except FileNotFoundError:
+    print(f"Error: {book} book file was not found. Please ensure you have the necessary files. Due to copyright restrictions I am unable to provide them.")
 
 
 def format_history(history):    

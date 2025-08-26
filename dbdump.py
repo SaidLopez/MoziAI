@@ -53,7 +53,11 @@ def add_metadata(clean_pages):
 
 if __name__ == "__main__":
     book = '100M Lost Chapters by Alex Hormozi.txt'
-    clean_pages = split_text(book)
+    try:
+        clean_pages = split_text(book)
+    except FileNotFoundError:
+        print(f"Error: The file '{book}' was not found. Due to copyright restrictions, please provide your own text file.")
+        
     metadata_list = add_metadata(clean_pages)  # Process only the first 3 pages for testing
     with open('metadata.json', 'w', encoding='utf-8') as f:
         import json

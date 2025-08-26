@@ -60,8 +60,11 @@ Follow the setup instructions to process your documents
 
 ## Getting Started
 
-`uv sync`
-`uv run main.py`
+#### NOTE: You need your own copy of the books to run this code, otherwise you will get an error trying to read "$100M The Lost Chapters"
+
+```uv sync
+uv run main.py
+```
 
 Remember to copy your secrets to the .env file
 

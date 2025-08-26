@@ -62,7 +62,8 @@ Follow the setup instructions to process your documents
 
 #### NOTE: You need your own copy of the books to run this code, otherwise you will get an error trying to read "$100M The Lost Chapters"
 
-```uv sync
+```
+uv sync
 uv run main.py
 ```
 
